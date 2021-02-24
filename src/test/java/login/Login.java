@@ -8,16 +8,16 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import java.io.File;
 import java.util.concurrent.TimeUnit;
 
-public class Login {
+public class ogin {
     @Test
     public void validLogin() {
-        File file = new File("./src/drivers/chromedriver.exe");
+        File file = new File("./src/driver/chromedriver.exe");
         System.setProperty("webdriver.chrome.driver", file.getAbsolutePath());
 
         WebDriver webDriver = new ChromeDriver();
 
         webDriver.manage().window().fullscreen();
-        webDriver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        webDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
         webDriver.get("http://b2b-pds.stage.k8s.mc.gcf/login");
 
@@ -25,8 +25,13 @@ public class Login {
 
         webDriver.findElement(By.xpath("//*[@placeholder='+38(050) XXX XX XX']")).sendKeys("+380635929001");
         webDriver.findElement(By.xpath("//*/button[2]")).click();
+        webDriver.findElement(By.xpath("//*[@type='password']")).click();
+        webDriver.findElement(By.xpath("//*[@type='password']")).sendKeys("2");
+        webDriver.findElement(By.xpath("//*/button[2]")).click();
 
-        Assert.assertTrue("Login isn ot valid", false);
+
+
+
         webDriver.quit();
     }
 }

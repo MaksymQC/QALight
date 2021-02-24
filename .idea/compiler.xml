@@ -6,11 +6,9 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="JavaCore202005" />
+        <module name="JavaNew" />
+        <module name="QALight" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel target="11">
-      <module name="JavaCore202005" target="11" />
-    </bytecodeTargetLevel>
   </component>
 </project>
